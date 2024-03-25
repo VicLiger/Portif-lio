@@ -10,7 +10,7 @@ body{
 }
 
 .container{
-    position:static;
+    position: relative;
     top: 12vh;
     width: 100%;
     height: 88vh ;
@@ -18,54 +18,42 @@ body{
     z-index: 2;
 }
 
-.title span {
+.bubbles{
     position: relative;
-    color: rgba(255, 255, 255, 0.1);
-    animation: displayText 9s infinite;
-
+    display: flex;
 }
 
-.title span:nth-child(2) {
-    animation-delay: -3s; /* Atraso para o segundo span */
+.bubbles span{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    background-color: #3cff00;
+    margin: 0 4px;
+    border-radius: 50%;
+    box-shadow: 0 0 0 10px #4fc3dc44,
+    0 0 50px #3cff00,
+    0 0 100px #3cff00;
+    animation: animate 15s linear infinite;
+    animation-duration: calc(200s / var(--i));
+    z-index: 0;
 }
 
-.title span:nth-child(3) {
-    animation-delay: -6s; /* Atraso para o terceiro span */
+.bubbles span:nth-child(even)
+{
+    background: #3cff00;
+    box-shadow: 0 0 0 10px #04360744,
+    0 0 50px #3cff00,
+    0 0 100px #3cff00;
 }
 
-
-@keyframes displayText{
+@keyframes animate {
     0%
     {
-        display:  inline-block;
+        transform: translateY(100vh) scale(0);
     }
-    33.33%, 100%
+    100%
     {
-        display: none;
-    }
-
-}
-
-.title span::before{
-    content:  attr(data-text);
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    color: #01fe87 ;
-    overflow: hidden;
-    border-right: 4px solid #01fe87;
-    filter: drop-shadow(0 0 5px #01fe87) drop-shadow( 0 0 25px #01fe87);
-    animation: animate 3s linear infinite;
-}
-
-@keyframes animate{
-    0%{
-        width: 0;
-    }
-    70%,90%
-    {
-        width: 100%;
+        transform: translateY(-10vh) scale(1);
     }
 }
 
@@ -93,7 +81,7 @@ header{
  }
 
  header .logo span{
-    color: #01fe87;
+    color: #3cff00;
  }
 
  ul{
@@ -204,14 +192,11 @@ ul li:hover a span{
 }
 
 .title span{
-    margin-left: 19% ;
+    margin-left: 10% ;
 }
 
 
 .title h1:nth-child(1){
     color: transparent;
-    -webkit-text-stroke: 2px #01fe87;
+    -webkit-text-stroke: 5px #ffffff;
 }
-
-/*********************************************************************/
-
