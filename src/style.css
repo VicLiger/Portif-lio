@@ -21,26 +21,24 @@ body{
 
 }
 
-.home-img {
-    width: 1000px; /* Defina a largura e a altura desejadas para o círculo */
-    height: 800px;
-    border-radius: 50%; /* Transforma o elemento em um círculo */
-    overflow: hidden; /* Esconde qualquer conteúdo que ultrapasse os limites do círculo */
-    margin-top: 50px;
-    margin-right: 50px;
-    position: relative; /* Para permitir o posicionamento absoluto da imagem */
+.container-header{
+    display: flex;
+    position: static;
+    background-color: white;
+    border-radius: 50px;
+    margin: auto;
+    width: 80% ;
+    height: 80%;
 }
 
-.home-img img {
-    width: 100%; /* Garante que a imagem preencha completamente o círculo */
-    height: auto; /* Permite que a altura da imagem seja ajustada automaticamente */
-    display: block; /* Remove qualquer espaço extra ao redor da imagem */
-    position: absolute; /* Posicionamento absoluto em relação ao círculo */
-    top: 50%; /* Move a imagem para o centro verticalmente */
-    left: 50%; /* Move a imagem para o centro horizontalmente */
-    transform: translate(-50%, -50%); /* Centraliza a imagem */
-    animation: floatAnimation 3s ease-in-out infinite alternate; /* Aplica a animação de flutuação */
+.home-img img{
+    width: 60%;
+    border-radius: 20%;
+    z-index: 5;
 }
+
+
+
 
 @keyframes floatAnimation {
     0% {
