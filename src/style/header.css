@@ -125,3 +125,20 @@ ul li:hover a span{
     filter: drop-shadow(0 0 20px var(--clr)) drop-shadow(0 0
     40px var(--clr)) drop-shadow(0 0 60px var(--clr));
 }
+
+
+.box{
+    width: 8rem;
+    height: 2rem;
+    background-color: white;
+    cursor: pointer;
+    filter: drop-shadow(0 0 10px #7ef0ff) drop-shadow(0 0 30px #7ef0ff);
+}
+
+.box ::before{
+    content: '';
+    position: absolute;
+    inset: -4px;
+    border: 1px solid #7ef0ff;
+    
+}
